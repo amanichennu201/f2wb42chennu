@@ -5,18 +5,18 @@ block content
   p #{query.rows} and  #{query.cols} 
   - let rows = Number(query.rows);
   - let col = Number(query.cols);
-  if !(Number.isInteger(rows) && Number.isInteger(col))
+  if (!(Number.isInteger(rows) && Number.isInteger(col)))
      p either rows or cols is not an integer 
   else if rows > 10 || rows < 1
      p rows out of range 
-   else if col > 10 || col < 1
+  else if col > 10 || col < 1
      p cols out of range 
-   else 
-      table#outer 
+  else 
+     table#outer 
       - for(let i=0; i<row; i++){
          tr#middle 
          <br>
-         - for(let j=0; j<col; j++){
-            td= (1 + i + (j * rows)) +" "
-        - }
-     - }
+            - for(let j=0; j<col; j++){
+               td= (1 + i + (j * rows)) +" "
+            - }
+      - }
