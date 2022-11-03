@@ -2,4 +2,14 @@ extends layout
 
 block content
   h1= title
-  
+ - var results = Bag;
+  div(class="container-fluid")
+    div(class="row" ,onclick=`buy(${index})`)
+    div(class="col-sm-2")  #{item.Bag_type}
+    div(class="col-sm-2")  #{item.Bag_Name}
+    div(class="col-sm-2")  #{item.Bag_cost}
+
+   script 
+         function buy(cost) {
+            alert('You purchased item '+ cost);
+         }
