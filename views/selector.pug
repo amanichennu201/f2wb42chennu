@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+     - let images_names=["skybag1.jpg","skybag2.jpg","safaribag1.jpg","safaribag2.jpg","americantourister"]
+   - for(let i=0; i<3; i++){
+     - let pic = Math.floor(Math.random()*5);
+     - let item = image_names[pic];
+    img(src=`/images/${item}` alt=`${item}` style='height:30opx; width=300px') 
+-}
+ 
